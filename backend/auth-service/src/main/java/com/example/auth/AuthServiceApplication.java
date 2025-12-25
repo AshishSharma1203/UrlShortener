@@ -10,6 +10,8 @@ public class AuthServiceApplication {
 		
         SpringApplication.run(AuthServiceApplication.class, args);
         System.out.println("Ashish: Auth Service is running");
-	}
+        System.out.println("JVM Timezone = " + java.util.TimeZone.getDefault());
+
+    }
 
 }

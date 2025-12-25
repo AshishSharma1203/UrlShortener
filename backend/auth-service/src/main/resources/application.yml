@@ -1,26 +1,5 @@
-# Application Configuration
 spring:
   application:
     name: auth-service
-  datasource:
-    url: jdbc:postgresql://localhost:5432/authdb
-    username: postgres
-    password: root@123
-  jpa:
-    hibernate:
-      ddl-auto: update
-      show-sql: true
-      properties:
-        hibernate:
-          format_sql: true
-
-# Server Configuration
-server:
-  port: 8081
-
-# Actuator Configuration
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics
+  profiles:
+    active: dev
