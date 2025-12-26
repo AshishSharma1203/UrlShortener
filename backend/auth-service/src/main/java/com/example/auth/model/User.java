@@ -45,4 +45,13 @@ public class User {
     void onUpdate() {
         this.updatedAt = Instant.now();
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", role=" + role +
+                ", id=" + id +
+                '}';
+    }
 }
