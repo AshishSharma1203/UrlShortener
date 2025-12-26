@@ -1,8 +1,6 @@
 package com.example.auth.controller;
 
-import com.example.auth.dto.AuthResponse;
-import com.example.auth.dto.LoginRequest;
-import com.example.auth.dto.SignupRequest;
+import com.example.auth.dto.*;
 import com.example.auth.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -27,4 +25,18 @@ public class AuthController {
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
         return ResponseEntity.ok(authService.login(request));
     }
+
+    @PostMapping("/refresh")
+    public ResponseEntity<AuthResponse> refresh(
+            @Valid @RequestBody RefreshRequest request) {
+        return ResponseEntity.ok(authService.refresh(request));
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(
+            @Valid @RequestBody LogoutRequest request) {
+        authService.logout(request);
+        return ResponseEntity.noContent().build();
+    }
+
 }

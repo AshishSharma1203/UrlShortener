@@ -19,6 +19,7 @@ public class JwtService {
     private final Key key;
 
     public JwtService(@Value("${jwt.secret}") String secret) {
+
         this.key = Keys.hmacShaKeyFor(secret.getBytes());
     }
 
@@ -29,7 +30,7 @@ public class JwtService {
                 .setSubject(userId.toString())
                 .claim("role", role.name())
                 .setIssuedAt(Date.from(now))
-                .setExpiration(Date.from(now.plus(30, ChronoUnit.MINUTES)))
+                .setExpiration(Date.from(now.plus(5, ChronoUnit.MINUTES)))
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }
