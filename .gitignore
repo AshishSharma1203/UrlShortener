@@ -75,3 +75,6 @@ dist-ssr/
 *.local
 
 .env
+
+**/.gitignore
+**/.gitattributes
