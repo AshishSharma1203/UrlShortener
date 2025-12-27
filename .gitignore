@@ -25,6 +25,14 @@ buildNumber.properties
 .mvn/timing.log
 .mvn/wrapper/maven-wrapper.jar
 
+# Maven
+**/target/
+**/pom.xml.versionsBackup
+**/pom.xml.*
+**/mvnw
+**/mvnw.cmd
+**/.mvn
+
 # IDE
 .idea/
 *.iml
