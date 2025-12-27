@@ -1,4 +1,5 @@
 # Java
+
 *.class
 *.log
 *.ctxt
@@ -14,27 +15,26 @@ hs_err_pid*
 replay_pid*
 
 # Maven
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.log
-.mvn/wrapper/maven-wrapper.jar
 
-# Maven
 **/target/
 **/pom.xml.versionsBackup
 **/pom.xml.*
 **/mvnw
 **/mvnw.cmd
 **/.mvn
+**/*.iml
+**/.idea
+*.iws
+*.ipr
+*.iml
+**/.classpath
+**/.project
+**/.settings/
+**/bin/
+
 
 # IDE
-.idea/
+
 *.iml
 *.iws
 *.ipr
@@ -49,23 +49,22 @@ bin/
 .springBeans
 
 # VS Code
-.vscode/
+**/.vscode/
 
 # Logs
-logs/
-*.log
-log/
-!**/src/main/**/logs/
-!**/src/test/**/logs/
+**/logs/
+**/*.log
+**/log/
 
-# Application
-application*.yml
-!application.yml
-!application-*.example.yml
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# Application properties
+**/src/main/resources/application-*.properties
+!**/src/main/resources/application.properties
+!**/src/main/resources/application.yml
 
 # Frontend (for future use)
 node_modules/
