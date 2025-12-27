@@ -1,0 +1,11 @@
+server:
+  port: 8082
+  
+spring:
+  application:
+    name: url-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/authdb
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
