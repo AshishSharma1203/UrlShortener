@@ -1,4 +1,4 @@
-package com.example.url_service;
+package com.example.url;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
