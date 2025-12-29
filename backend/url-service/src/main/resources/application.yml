@@ -4,11 +4,13 @@ server:
 spring:
   application:
     name: url-service
-
+  jpa:
+    hibernate:
+      ddl-auto: update
   profiles:
     active: dev
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/authdb
+    url: jdbc:postgresql://localhost:5432/url_db
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}

@@ -13,5 +13,10 @@ spring:
           predicates:
             - Path=/auth/**
 
+        - id: url-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/url/**,/u/**
+
 jwt:
   secret: ${JWT_SECRET}
