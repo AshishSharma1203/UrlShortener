@@ -19,4 +19,8 @@ public final class UrlConstants {
     
     public static final int DEFAULT_EXPIRATION_DAYS = 365;
     public static final String URL_PREFIX = "http://localhost:8080/u/";
+
+    // for Redis
+    public static final String REDIS_REDIRECT_KEY_PREFIX = "url:redirect:";
+
 }
