@@ -1,5 +1,6 @@
 package com.example.auth.security;
 
+import com.example.auth.config.SecurityConstants;
 import com.example.auth.model.Role;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -18,8 +19,7 @@ public class JwtService {
 
     private final Key key;
 
-    public JwtService(@Value("${jwt.secret}") String secret) {
-
+    public JwtService(@Value(SecurityConstants.JWT_SECRET) String secret) {
         this.key = Keys.hmacShaKeyFor(secret.getBytes());
     }
 
@@ -30,7 +30,10 @@ public class JwtService {
                 .setSubject(userId.toString())
                 .claim("role", role.name())
                 .setIssuedAt(Date.from(now))
-                .setExpiration(Date.from(now.plus(5, ChronoUnit.MINUTES)))
+                .setExpiration(Date.from(now.plus(
+                    SecurityConstants.JWT_ACCESS_TOKEN_EXPIRATION_MINUTES, 
+                    ChronoUnit.MINUTES
+                )))
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }
