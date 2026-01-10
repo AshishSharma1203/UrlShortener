@@ -23,4 +23,7 @@ public final class UrlConstants {
     // for Redis
     public static final String REDIS_REDIRECT_KEY_PREFIX = "url:redirect:";
 
+    // Kafka
+    public static final String KAFKA_URL_ACCESS_TOPIC = "url-access-events";
+
 }

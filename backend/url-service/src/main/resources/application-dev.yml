@@ -9,6 +9,12 @@ spring:
       host: localhost
       port: 6379
       timeout: 2s
+  kafka:
+    bootstrap-servers: 172.28.241.217:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
 
   jpa:
     show-sql: true
