@@ -15,7 +15,7 @@ public class AnalyticsProducer {
     public void publishUrlAccess(String alias) {
         UrlAccessEvent event =
                 new UrlAccessEvent(alias, java.time.Instant.now());
-
+        System.out.println("publsihing event "+ event);
         kafkaTemplate.send(
                 KAFKA_URL_ACCESS_TOPIC,
                 alias,      // key (helps partitioning later)

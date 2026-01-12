@@ -14,6 +14,10 @@ spring:
   kafka:
     bootstrap-servers: 172.28.241.217:9092
 
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
     consumer:
       group-id: url-analytics-group-v5
       auto-offset-reset: earliest
